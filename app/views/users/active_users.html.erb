@@ -1,0 +1,9 @@
+<% @users.each do |user| %>
+    <% if user.last_seen > 5.minutes.ago %>
+      <p style="color: green;">Logged <%= user.email %></p>
+    <% else %>
+      <p style="color: gray;">Logged out <%= user.email %></p>
+    <% end %>
+  <% end %>
+  
+  
