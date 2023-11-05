@@ -1,0 +1,74 @@
+* {
+    font-family: Roboto;
+}
+h1 {
+  color: white;
+}
+
+.chessinfo {
+  height: 20px;
+  background-color: #45364e;
+}
+.navbar {
+  height: 60px;
+  background-color: #e9d4d4;
+}
+
+.left-section {
+  display: inline-block;
+}
+.middle-section {
+  display: inline-block;
+}
+.right-section {
+  display: inline-block;
+}
+#home-container {
+  margin-top: 25px;
+}
+.jumbotron {
+  background-image: url("homechess.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+}
+.hello-user {
+  color: #0a58ca;
+  font-weight: 500;
+}
+.display-4 {
+  text-align: center;
+}
+.lead {
+  color: white;
+  text-align: center;
+  margin-bottom: 0;
+}
+.createdby {
+  color: rgb(158, 158, 158);
+  text-align: center;
+  margin-top: 10px;
+  font-size: 10px;
+
+  
+}
+#button{
+    display: grid;
+    place-items: center;
+    padding: 10px;
+
+}
+.hello2{
+    font-weight: 700;
+    font-size: 30px;
+}
+.description{
+    font-size: 12px;
+}
+.nav-createdby{
+    display: grid;
+    place-items: center;
+
+ 
+}

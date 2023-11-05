@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   devise_for :users
   get 'active_users', to: 'users#active_users'
+  get 'play', to: 'pages#play'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
