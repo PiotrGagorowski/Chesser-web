@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   resources :games
   root 'pages#home'
-  devise_for :users
+  
   get 'active_users', to: 'users#active_users'
   get 'play', to: 'pages#play'
+  devise_for :users, controllers: { sessions: 'sessions', registrations: 'registrations' }
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
