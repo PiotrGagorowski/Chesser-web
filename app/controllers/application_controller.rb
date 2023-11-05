@@ -7,4 +7,7 @@ class ApplicationController < ActionController::Base
       current_user.update_attribute(:last_seen, Time.current) if user_signed_in?
     end
     
+   
+  
+      
 end
