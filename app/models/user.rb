@@ -11,4 +11,9 @@ class User < ApplicationRecord
       .where(id: target_user.games)
       .where(state: :in_progress)
   end
+
+  def logged_in?
+      self.logged_in
+    end
+
 end

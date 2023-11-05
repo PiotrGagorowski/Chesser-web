@@ -5,4 +5,6 @@ class PagesController < ApplicationController
   def play
     @users = User.where.not(id: current_user)
   end
+
+
 end
