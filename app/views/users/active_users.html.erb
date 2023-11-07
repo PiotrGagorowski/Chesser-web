@@ -14,15 +14,15 @@
     <div class="player-card">
       <% if user.logged_in? && user.last_seen && user.last_seen > 300.seconds.ago %>
         <%= link_to 'play', class: 'active-links-players', title: "Battle with: #{user.email}" do %>
-          <p style="color: #33CC00;"><%= user.email %>: Logged</p>
+          <p class="logged-p" style="color: #33CC00;"><%= user.email %>: Logged</p>
         <% end %>
       <% elsif user.logged_in? && user.last_seen && user.last_seen > 15.minutes.ago %>
         <%= link_to '#', class: 'active-links-players', title: "Battle with: #{user.email}", onclick: "alert('The player is away, please wait')" do %>
-          <p style="color: #FFFF99;"><%= user.email %>: Away</p>
+          <p class="away-p" style="color: #FFFF99;"><%= user.email %>: Away</p>
         <% end %>
       <% else %>
         <%= link_to '#', class: 'active-links-players', title: "Battle with: #{user.email}", onclick: "alert('The player is logged out.')" do %>
-          <p style="color: gray;"><%= user.email %>: Logged out</p>
+          <p class="loggedout-p" style="color: gray;"><%= user.email %>: Logged out</p>
         <% end %>
       <% end %>
     </div>
@@ -31,7 +31,7 @@
 
 </div>
 
-<%= link_to 'Go back', root_path, class: 'btn btn-primary', title: "Chesser-Web" %>
+<%= link_to 'Go back', root_path, class: 'btn btn-primary button-to-back', title: "Chesser-Web" %>
 
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

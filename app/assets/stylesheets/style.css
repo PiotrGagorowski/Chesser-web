@@ -42,6 +42,12 @@ body {
 
 }
 
+.player-card:hover {
+  box-shadow: 0 0 5px white, 0 0 10px rgb(68, 125, 144), 0 0 14px rgb(87, 156, 179);
+  cursor: pointer;
+
+}
+
 .active-links-players {
   text-decoration: none;
 }
