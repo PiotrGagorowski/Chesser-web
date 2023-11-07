@@ -17,11 +17,11 @@
           <p class="logged-p" style="color: #33CC00;"><%= user.email %>: Logged</p>
         <% end %>
       <% elsif user.logged_in? && user.last_seen && user.last_seen > 15.minutes.ago %>
-        <%= link_to '#', class: 'active-links-players', title: "Battle with: #{user.email}", onclick: "alert('The player is away, please wait')" do %>
+        <%= link_to '#', class: 'active-links-players', title: "Battle with: #{user.email}", onclick: "alert('This player is away, please wait')" do %>
           <p class="away-p" style="color: #FFFF99;"><%= user.email %>: Away</p>
         <% end %>
       <% else %>
-        <%= link_to '#', class: 'active-links-players', title: "Battle with: #{user.email}", onclick: "alert('The player is logged out.')" do %>
+        <%= link_to '#', class: 'active-links-players', title: "Battle with: #{user.email}", onclick: "alert('This player is logged out.')" do %>
           <p class="loggedout-p" style="color: gray;"><%= user.email %>: Logged out</p>
         <% end %>
       <% end %>
