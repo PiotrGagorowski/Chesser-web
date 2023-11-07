@@ -24,7 +24,7 @@ body {
 
 /*  Ustawienia dla kart w Active players */
 .player-card {
-  width: 25%;
+  width: 30%;
   background: radial-gradient(circle at top left, #0e161e, #050b0f);
   margin: 1%;
   text-align: center;
@@ -33,7 +33,7 @@ body {
   border-radius: 5px 10px;
   box-shadow: 0 0 2px white, 0 0 5px rgb(68, 125, 144), 0 0 9px rgb(87, 156, 179);
   transition: 0.5s;
-  font-size: 17px;
+  font-size: 1.20vw;
 }
 
 .player-card:hover {
