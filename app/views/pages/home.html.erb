@@ -3,6 +3,7 @@
 <%# NAVBAR %>
 
 </div>
+
 <div class="body">
 <% if current_user %>
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -13,8 +14,8 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="play">Play</span></a>
-      <a class="nav-item nav-link"<%= link_to "Active Players", active_users_path %>> </a>
-      <a class="nav-item nav-link" <%= link_to "Logout", destroy_user_session_path, method: :delete %>></a>
+      <a class="nav-item nav-link"<%= link_to "Active Players", active_users_path %> </a>
+      <a class="nav-item nav-link" <%= link_to "Logout", destroy_user_session_path, method: :delete %></a>
 
     </div>
   </div>
@@ -47,8 +48,8 @@ and enhance your chess skills in our community.<br>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" <%= link_to "Login", new_user_session_path %>></a>
-      <a class="nav-item nav-link"  <%= link_to "Sign Up", new_user_registration_path %>></a>
+      <a class="nav-item nav-link" <%= link_to "Login", new_user_session_path %></a>
+      <a class="nav-item nav-link"  <%= link_to "Sign Up", new_user_registration_path %></a>
     </div>
   </div>
 </nav>
@@ -56,11 +57,11 @@ and enhance your chess skills in our community.<br>
 <div class="container" id="home-container">
 <div class="jumbotron">
  <h1 class="display-4">Hello, <span class="hello-user">Login</span> to Play!</h1>
-  <p class="lead"> <span class="hello2">Welcome to ChessWeb!</span> <br> <span class="description">We're delighted to have you here. 
+  <p class="lead"> <span class="hello2">Welcome to Chesser-Web!</span> <br> <span class="description">We're delighted to have you here. 
 Make friends with the pieces 
 and enhance your chess skills in our community.<br>
 Login to Play
- <div id="button"><a class="btn btn-primary btn-lg" role="button" <%= link_to "Login", new_user_session_path %> > </a></div>
+ <div id="button"><a class="btn btn-primary btn-lg" role="button" <%= link_to "Login", new_user_session_path %></a></div>
 </div>
 </div>
  <div class="nav-createdby"><span class="createdby">Created by Jakub Kryska & Piotr Gągorowski</a></span></div>

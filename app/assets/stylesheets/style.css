@@ -1,6 +1,35 @@
 * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
     font-family: Roboto;
 }
+
+body {
+  height: 200vh;
+  /* background-color: #0a1117; */
+}
+
+.navbar-expand-lg {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+
+.bg-dark {
+  background-color: #0a1117 !important;
+}
+
+.navbar-brand{
+  padding-left: 20px;
+}
+
+.navbar-nav {
+  padding-left: 10px;
+}
+
+
 h1 {
   color: white;
 }
@@ -26,17 +55,38 @@ h1 {
 #home-container {
   margin-top: 25px;
 }
+
+
+
 .jumbotron {
-  background-image: url("homechess.jpg");
-  background-position: center;
+  background-image: url("hoche3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 450px;
+  background-attachment: fixed;
+  height: 500px;
+  border-radius: 15px;
+  border: 2px solid rgb(255, 255, 255);
+  outline: 4px solid black;
+  padding: 25px;
+  text-align: center;
+  margin-top: 100px;
+ 
+ 
 }
 .hello-user {
   color: #0a58ca;
   font-weight: 500;
+  transition: 0.85s;
 }
+
+.hello-user:hover {
+  color: #0066ff;
+  
+  cursor: url('konik.jpg');
+ 
+}
+
+
 .display-4 {
   text-align: center;
 }
@@ -71,4 +121,12 @@ h1 {
     place-items: center;
 
  
+}
+
+
+/* Challange buttons and overall looks */
+
+.jp {
+  background-color: #0a1117;
+  color: white;
 }
