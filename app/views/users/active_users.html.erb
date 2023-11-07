@@ -1,11 +1,19 @@
-<% @users.each do |user| %>
-  <% if user.logged_in? && user.last_seen && user.last_seen > 300.seconds.ago %>
-    <p style="color: #27944f;">Logged <%= user.email %></p>
-  <% elsif user.logged_in? && user.last_seen && user.last_seen > 15.minutes.ago %>
-    <p style="color: #ffcc00;">Away <%= user.email %></p>
-  <% else %>
-    <p style="color: gray;">Logged out <%= user.email %></p>
+<%= stylesheet_link_tag "style_for_play_active.css" %>
+
+<div class="active-players d-flex flex-wrap justify-content-center align-items-center">
+  <% @users.each do |user| %>
+    <div class="player-card">
+    <a  class="active-links-players" href="play" title="Battle with: <%= user.email %>">
+      <% if user.logged_in? && user.last_seen && user.last_seen > 300.seconds.ago %>
+        <p style="color: #27944f;"><%= user.email %>: Logged</p>
+      <% elsif user.logged_in? && user.last_seen && user.last_seen > 15.minutes.ago %>
+        <p style="color: #ffcc00;"><%= user.email %>: Away</p>
+      <% else %>
+        <p style="color: gray;"><%= user.email %>: Logged out</p>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
+  </a>
+</div>
 
 <%= link_to 'Go back', root_path, class: 'btn btn-primary', title: "Chesser-Web" %>

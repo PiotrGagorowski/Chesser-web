@@ -5,18 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-user = User.create!(email: 'dean@example.com',
-                    password: 'password',
-                    password_confirmation: 'password')
-user = User.create!(email: 'john@doe.com',
-                    password: 'password',
-                    password_confirmation: 'password')
-user = User.create!(email: 'jane@doe.com',
-                    password: 'password',
-                    password_confirmation: 'password')
 
-10.times do
-  user = User.create!(email: Faker::Internet.email,
-                      password: 'password',
-                      password_confirmation: 'password')
+
+100.times do
+      number = rand(2) == 1 ? '25' : '26' # Wybiera losowo '25' lub '26'
+      number += rand(10**3..10**4-1).to_s # Dodaje losowe cztery cyfry
+      email = number + '@student.pwr.edu.pl'
+      user = User.create!(email: email,
+      password: 'password',
+      password_confirmation: 'password')
 end
+                    
