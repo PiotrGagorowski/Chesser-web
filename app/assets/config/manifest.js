@@ -2,4 +2,4 @@
 //= link_tree ../builds
 //= link style.css
 //= link style_for_play_active.css
-
+//= link application.css
