@@ -1,19 +1,66 @@
 <%= stylesheet_link_tag "style_for_play_active.css" %>
 
-<div class="active-players d-flex flex-wrap justify-content-center align-items-center">
+
+
+<div id="navbar" class="search-input d-flex flex-column justify-content-center mb-4">
+    <h1 class="h1-text">Active Player List</h1>
+    <div class="justline"></div>
+    <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="You can check here who's available to battle" autocomplete="off">
+</div>
+
+<div id="content">
+    <div class="active-players d-flex flex-wrap justify-content-center align-items-center">
   <% @users.each do |user| %>
     <div class="player-card">
-    <a  class="active-links-players" href="play" title="Battle with: <%= user.email %>">
       <% if user.logged_in? && user.last_seen && user.last_seen > 300.seconds.ago %>
-        <p style="color: #27944f;"><%= user.email %>: Logged</p>
+        <%= link_to 'play', class: 'active-links-players', title: "Battle with: #{user.email}" do %>
+          <p class="logged-p" style="color: #33CC00;"><%= user.email %>: Logged</p>
+        <% end %>
       <% elsif user.logged_in? && user.last_seen && user.last_seen > 15.minutes.ago %>
-        <p style="color: #ffcc00;"><%= user.email %>: Away</p>
+        <%= link_to '#', class: 'active-links-players', title: "Battle with: #{user.email}", onclick: "alert('This player is away, please wait')" do %>
+          <p class="away-p" style="color: #FFFF99;"><%= user.email %>: Away</p>
+        <% end %>
       <% else %>
-        <p style="color: gray;"><%= user.email %>: Logged out</p>
+        <%= link_to '#', class: 'active-links-players', title: "Battle with: #{user.email}", onclick: "alert('This player is logged out.')" do %>
+          <p class="loggedout-p" style="color: gray;"><%= user.email %>: Logged out</p>
+        <% end %>
       <% end %>
     </div>
   <% end %>
-  </a>
 </div>
 
-<%= link_to 'Go back', root_path, class: 'btn btn-primary', title: "Chesser-Web" %>
+</div>
+
+<%= link_to 'Go back', root_path, class: 'btn btn-primary button-to-back', title: "Chesser-Web" %>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelector('#searchInput').addEventListener('keyup', function() {
+      let filter = this.value.toUpperCase();
+      let playerCards = document.querySelectorAll('.player-card');
+
+      playerCards.forEach(function(card) {
+        let txtValue = card.textContent || card.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+
+  
+  $(document).ready(function(){
+    $("#searchInput").on('focus', function(){
+      $(this).attr("placeholder", "");
+    });
+    $("#searchInput").on('blur', function(){
+      if($(this).val().length == 0){
+        $(this).attr("placeholder", "You can check here who's available to battle");
+      }
+    });
+  });
+  
+
+</script>
