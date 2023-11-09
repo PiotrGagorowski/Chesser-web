@@ -6,7 +6,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   background: radial-gradient(circle at top left, #0e161e, #050b0f);
   
 }
@@ -18,7 +18,7 @@ body {
 .active-players {
   flex-wrap: wrap;
   max-width: 1400px;
-  margin: 20px auto; 
+  margin: 20px 1%; 
   background: radial-gradient(circle at top left, #0e161e, #050b0f);
 }
 
@@ -131,30 +131,54 @@ h1 {
 @keyframes justli-1 {
   0% {
       
-      box-shadow: 0 0 5px white, 0 0 6px rgb(111, 210, 243), 0 0 100px rgb(17, 139, 180), 0 0 120px rgb(17, 139, 180);
+      box-shadow: 0 0 5px white, 0 0 6px rgb(111, 210, 243), 0 0 40px rgb(17, 139, 180), 0 0 50px rgb(17, 139, 180);
   }
 
   25% {
       
-      box-shadow: 0 0 7px white, 0 0 7px rgb(130, 212, 240), 0 0 120px rgb(26, 160, 205), 0 0 150px rgb(17, 139, 180);
+      box-shadow: 0 0 7px white, 0 0 7px rgb(130, 212, 240), 0 0 30px rgb(26, 160, 205), 0 0 40px rgb(17, 139, 180);
   }
 
 
   50% {
-      box-shadow: 0 0 8px white, 0 0 8px rgb(120, 201, 228), 0 0 130px rgb(39, 135, 167, 0 0 160px rgb(17, 139, 180));
+      box-shadow: 0 0 8px white, 0 0 8px rgb(120, 201, 228), 0 0 60px rgb(39, 135, 167, 0 0 50px rgb(17, 139, 180));
   }
 
 
   75% {
-      box-shadow: 0 0 10px white, 0 0 9px rgb(135, 214, 240), 0 0 160px rgb(39, 135, 167), 0 0 170px rgb(17, 139, 180);
+      box-shadow: 0 0 10px white, 0 0 9px rgb(135, 214, 240), 0 0 45px rgb(39, 135, 167), 0 0 90px rgb(17, 139, 180);
   }
 
   100% {
-      box-shadow: 0 0 5px white, 0 0 6px rgb(76, 196, 236), 0 0 100px rgb(17, 139, 180), 0 0 120px rgb(17, 139, 180);
+      box-shadow: 0 0 5px white, 0 0 6px rgb(76, 196, 236), 0 0 50px rgb(17, 139, 180), 0 0 60px rgb(17, 139, 180);
   }
 }
 
+@keyframes justli-2 {
+  0% {
+      
+      box-shadow: 0 0 5px white, 0 0 6px rgb(111, 210, 243), 0 0 40px rgb(17, 139, 180), 0 0 50px rgb(17, 139, 180);
+  }
 
+  25% {
+      
+      box-shadow: 0 0 7px white, 0 0 7px rgb(86, 198, 235), 0 0 30px rgb(10, 91, 118), 0 0 40px rgb(17, 139, 180);
+  }
+
+
+  50% {
+      box-shadow: 0 0 8px white, 0 0 8px rgb(175, 204, 213), 0 0 60px rgb(39, 135, 167, 0 0 50px rgb(17, 139, 180));
+  }
+
+
+  75% {
+      box-shadow: 0 0 10px white, 0 0 9px rgb(16, 62, 77), 0 0 45px rgbrgb(7, 139, 183) 0 90px rgb(17, 139, 180);
+  }
+
+  100% {
+      box-shadow: 0 0 5px white, 0 0 6px rgb(76, 196, 236), 0 0 50px rgb(17, 139, 180), 0 0 60px rgb(17, 139, 180);
+  }
+}
 
 
 
@@ -222,18 +246,25 @@ h1 {
 /* Navbar */
 
 .news-bar {
-  color: #0066ff !important;
+  color: #4481bf !important;
 }
 
 
 .nav-link {
-  color: #3283fd !important;
+  color: #4481bf !important;
   font-size: 18px !important;
+  transition: 0.3s;
 }
+
+.nav-link:hover {
+  color: rgb(0, 187, 250) !important;
+  text-shadow: 0 0 1px white, 0 0 2px rgb(76, 196, 236), 0 0 4px rgb(17, 139, 180);
+}
+
 
 #news {
   font-size: 32px;
-  padding-top: 65px;
+  /* padding-top: 65px; */
 
 }
 
@@ -253,3 +284,99 @@ h1 {
   box-shadow: inset 0 0 3px 3px rgb(0, 228, 38);
 }
 
+
+/* Instrukcja HTML */
+
+.inst {
+  color: #4481bf;
+  border-radius: 15px;
+  animation: justli-1 2s alternate infinite linear;
+  border: 1px solid rgb(0, 187, 250);
+  box-shadow: 0 0 5px white, 0 0 10px rgb(76, 196, 236), 0 0 14px rgb(17, 139, 180);
+  width: 90%;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+ 
+}
+
+strong {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-style: italic;
+}
+
+.bo {
+  height: 100%;
+}
+
+ul.ul-spa li {
+  margin-top: 10px;
+}
+
+ul.ul-spa {
+  list-style: none;
+}
+
+.h2-inst {
+color: white;
+}
+
+.movie-inst {
+  border-radius: 15px;
+  
+  border: 1px solid rgb(0, 187, 250);
+  box-shadow: 0 0 5px white, 0 0 10px rgb(76, 196, 236), 0 0 14px rgb(17, 139, 180);
+  animation: justli-2 2s alternate infinite ease-in-out;
+}
+
+
+
+
+
+/* KONIEC - Instrukcja HTML */
+
+
+/* NEWS */
+h4 {
+  color: #eaedf0;
+  padding: 15px 10%;
+  text-align: center;
+  border-radius: 15px;
+  
+  border: 1px solid rgb(0, 187, 250);
+  box-shadow: 0 0 5px white, 0 0 10px rgb(76, 196, 236), 0 0 14px rgb(17, 139, 180);
+  font-size: 19px;
+  max-width: 1200px;
+  backdrop-filter: blur(8px);
+  line-height: 25px;
+}
+
+#news {
+  color: #c2dffc;
+  font-size: 52px;
+  
+  
+}
+
+.h2 {
+  color: #c2dffc;
+  font-size: 14px;
+}
+
+
+.justline {
+  width: 100%;
+  margin: 1px auto;
+  border: 1px solid rgb(0, 187, 250);
+  box-shadow: 0 0 5px white, 0 0 10px rgb(76, 196, 236), 0 0 14px rgb(17, 139, 180);
+  animation: justli 4s alternate infinite ease-in-out;
+ 
+}
+
+
+.edi {
+  margin-top: 65px;
+}
+
+
+/* KONIEC NEWS */
