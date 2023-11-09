@@ -1,0 +1,256 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+      font-family: Roboto;
+  }
+  
+  body {
+    height: 100vh;
+    background: radial-gradient(circle at top left, #0e161e, #050b0f);
+    
+  }
+  
+  /* #0a1117 kolor navbaru */
+  
+  /*  Ustawienia dla kart w Active players */
+  
+  .active-players {
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 20px auto; 
+    background: radial-gradient(circle at top left, #0e161e, #050b0f);
+  }
+  
+  /*  Ustawienia dla kart w Active players */
+  .player-card {
+    width: 30%;
+    background: radial-gradient(circle at top left, #0e161e, #050b0f);
+    margin: 1%;
+    text-align: center;
+    border: 1px solid rgb(68, 125, 144);
+    padding-top: 1%;
+    border-radius: 5px 10px;
+    box-shadow: 0 0 2px white, 0 0 5px rgb(68, 125, 144), 0 0 9px rgb(87, 156, 179);
+    transition: 0.5s;
+    font-size: 1.20vw;
+  }
+  
+  .player-card:hover {
+    box-shadow: 0 0 5px white, 0 0 10px rgb(68, 125, 144), 0 0 14px rgb(87, 156, 179);
+    cursor: pointer;
+  
+  }
+  
+  .player-card:hover {
+    box-shadow: 0 0 5px white, 0 0 10px rgb(68, 125, 144), 0 0 14px rgb(87, 156, 179);
+    cursor: pointer;
+  
+  }
+  
+  .active-links-players {
+    text-decoration: none;
+  }
+  
+  
+  .navbar-expand-lg {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+  }
+  
+  
+  .bg-dark {
+    background-color: #0a1117 !important;
+    border-bottom: 1px solid rgb(0, 187, 250);
+    box-shadow: 0 0 5px white, 0 0 10px rgb(76, 196, 236), 0 0 14px rgb(17, 139, 180);
+    
+  }
+  
+  
+  
+  
+  
+  .navbar-brand{
+    padding-left: 20px;
+  }
+  
+  .navbar-nav {
+    padding-left: 10px;
+  }
+  
+  
+  h1 {
+    color: white;
+  }
+  
+  .chessinfo {
+    height: 20px;
+    background-color: #45364e;
+  }
+  .navbar {
+    height: 60px;
+    background-color: #e9d4d4;
+  }
+  
+  .left-section {
+    display: inline-block;
+  }
+  .middle-section {
+    display: inline-block;
+  }
+  .right-section {
+    display: inline-block;
+  }
+  #home-container {
+    margin-top: 25px;
+  }
+  
+  
+  
+  .jumbotron {
+    background-image: url("hoche3.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500px;
+    border-radius: 45px !important;
+    animation: justli-1 2s alternate infinite linear;
+    border: 1px solid rgb(0, 187, 250);
+    box-shadow: 0 0 5px white, 0 0 10px rgb(76, 196, 236), 0 0 14px rgb(17, 139, 180);
+    padding: 25px;
+    text-align: center;
+    margin-top: 100px;
+    transition: 2s ease;
+   
+  }
+  
+  
+  
+  
+  @keyframes justli-1 {
+    0% {
+        
+        box-shadow: 0 0 5px white, 0 0 6px rgb(111, 210, 243), 0 0 100px rgb(17, 139, 180), 0 0 120px rgb(17, 139, 180);
+    }
+  
+    25% {
+        
+        box-shadow: 0 0 7px white, 0 0 7px rgb(130, 212, 240), 0 0 120px rgb(26, 160, 205), 0 0 150px rgb(17, 139, 180);
+    }
+  
+  
+    50% {
+        box-shadow: 0 0 8px white, 0 0 8px rgb(120, 201, 228), 0 0 130px rgb(39, 135, 167, 0 0 160px rgb(17, 139, 180));
+    }
+  
+  
+    75% {
+        box-shadow: 0 0 10px white, 0 0 9px rgb(135, 214, 240), 0 0 160px rgb(39, 135, 167), 0 0 170px rgb(17, 139, 180);
+    }
+  
+    100% {
+        box-shadow: 0 0 5px white, 0 0 6px rgb(76, 196, 236), 0 0 100px rgb(17, 139, 180), 0 0 120px rgb(17, 139, 180);
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  .hello-user {
+    color: #0a58ca;
+    font-weight: 500;
+    transition: 0.85s;
+  }
+  
+  .hello-user:hover {
+    color: #0066ff;
+    
+    cursor: url('konik.jpg');
+   
+  }
+  
+  
+  .display-4 {
+    text-align: center;
+  }
+  .lead {
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .createdby {
+    color: rgb(158, 158, 158);
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10px;
+  
+    
+  }
+  #button{
+      display: grid;
+      place-items: center;
+      padding: 10px;
+  
+  }
+  .hello2{
+      font-weight: 700;
+      font-size: 30px;
+  }
+  .description{
+      font-size: 12px;
+  }
+  .nav-createdby{
+      display: grid;
+      place-items: center;
+  
+   
+  }
+  
+  
+  /* Challange buttons and overall looks */
+  
+  .jp {
+    background-color: #0a1117;
+    color: white;
+  }
+  
+  
+  /* Navbar */
+  
+  .news-bar {
+    color: #0066ff !important;
+  }
+  
+  
+  .nav-link {
+    color: #3283fd !important;
+    font-size: 18px !important;
+  }
+  
+  #news {
+    font-size: 32px;
+    padding-top: 65px;
+  
+  }
+  
+  
+  
+  .black-3c85d {
+    background-color: #0066ff;
+  }
+  
+  .white-1e1d7 {
+    background-color: #ee9403;
+    color: #b58863;
+  }
+  
+  
+  .highlight1-32417, .highlight2-9c5d2 {
+    box-shadow: inset 0 0 3px 3px rgb(0, 228, 38);
+  }
+  
+  
