@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   
   get 'active_users', to: 'users#active_users'
   get 'play', to: 'pages#play'
+  get 'pages/instruction', to: 'pages#instruction'
+
   devise_for :users, controllers: { sessions: 'sessions', registrations: 'registrations' }
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
