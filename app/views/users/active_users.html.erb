@@ -12,8 +12,14 @@
     <div class="active-players d-flex flex-wrap justify-content-center align-items-center">
   <% @users.each do |user| %>
     <div class="player-card">
-      <% if user.logged_in? && user.last_seen && user.last_seen > 300.seconds.ago %>
-        <%= link_to 'play', class: 'active-links-players', title: "Battle with: #{user.email}" do %>
+    
+    <% if user.id == current_user.id %>
+        <%= link_to '#', class: 'active-links-players', title: "#{user.email}", onclick: "alert('You can not fight with yourself!')" do %>
+          <p class="logged-p" style="color: #33CC00;"><%= user.email %>: Logged</p>
+        <% end %>
+
+      <% elsif user.logged_in? && user.last_seen && user.last_seen > 300.seconds.ago %>
+        <%= link_to 'play', class: 'active-links-players', title: "Battle with: #{user.email}"  do %>
           <p class="logged-p" style="color: #33CC00;"><%= user.email %>: Logged</p>
         <% end %>
       <% elsif user.logged_in? && user.last_seen && user.last_seen > 15.minutes.ago %>
@@ -51,6 +57,7 @@
   });
 
   
+  
   $(document).ready(function(){
     $("#searchInput").on('focus', function(){
       $(this).attr("placeholder", "");
@@ -63,4 +70,10 @@
   });
   
 
+
+
+
+
+
+  
 </script>
