@@ -15,7 +15,7 @@
   document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector('#searchInput').addEventListener('keyup', function() {
       let filter = this.value.toUpperCase();
-      let playerCards = document.querySelectorAll('.container');
+      let playerCards = document.querySelectorAll('.texto');
 
       playerCards.forEach(function(card) {
         let txtValue = card.textContent || card.innerText;
@@ -27,10 +27,6 @@
       });
     });
   });
-
-
-
-
 
 
 
