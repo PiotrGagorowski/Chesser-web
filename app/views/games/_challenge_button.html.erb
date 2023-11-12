@@ -1,13 +1,13 @@
 <%= stylesheet_link_tag "style_for_play_active.css" %>
 
 
-<div class="container">
+<div class="container  d-felx justify-content-center">
   <%= form_with model: Game.new, url: games_path, method: :post do |form| %>
-    <div class="row form-group mb-5 texto ">
+    <div class="row form-group mb-5 texto  d-felx justify-content-center">
       <%= form.hidden_field :challenger_id, value: current_user.id %>
       <%= form.hidden_field :challengee_id, value: user.id %>
-      <div class="col-4 p-0" onclick="toggleOptions(this)">
-        <%= content_tag(:span, "#{user.email}", class:"input-group-text w-100 textoo first-name ") %>
+      <div class="col-4 p-0  d-felx justify-content-center" onclick="toggleOptions(this)">
+        <%= content_tag(:span, "#{user.email}", class:"input-group-text w-100 textoo first-name d-felx justify-content-center") %>
       </div>
       <div class="col-4 p-0 second-change first-name texto-1" style="display: none;">
         <%= form.select :color, 

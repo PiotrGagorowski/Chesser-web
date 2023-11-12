@@ -177,6 +177,7 @@ input::placeholder {
      transition: 0.5s;
      padding: 40px;
     font-size: 18px;
+  
     
    }
  
@@ -226,9 +227,9 @@ input::placeholder {
 } */
 
 .texto-1::before {
-    content: "/ Change color";
+    content: "/ Click to change color";
     position: absolute;
-    right: 39%;
+    right: 25%;
     top: 38%;
     font-size: 18px;
     color: white;
@@ -277,55 +278,3 @@ input::placeholder {
     left: 120%;
 }
 
-@media only screen and (max-width: 1200px) {
-    /* Styles for screens smaller than 1200px */
-    .first-name, .texto, .texto-1, .texto-2 {
-      font-size: 16px;
-    
-    }
-  }
-  
-  @media only screen and (max-width: 1200px) {
-    /* Styles for screens smaller than 1200px */
-    .first-name, .texto, .texto-1, .texto-2 {
-      font-size: 16px;
-    
-    }
-    .texto-1::before {
-        margin-left: 35%;
-        font-size: 16px;
-      }
-  }
-  
-  @media only screen and (max-width: 992px) {
-    /* Styles for screens smaller than 992px */
-    .first-name, .texto, .texto-1, .texto-2 {
-      font-size: 14px;
-     
-    }
-    .texto-1::before {
-      display: none;
-    }
-  }
-  
-  @media only screen and (max-width: 768px) {
-    /* Styles for screens smaller than 768px */
-    .first-name, .texto, .texto-1, .texto-2 {
-      font-size: 12px;
-     
-    }
-    .texto-1::before {
-      display: none;
-    }
-  }
-  
-  @media only screen and (max-width: 576px) {
-    /* Styles for screens smaller than 576px */
-    .first-name, .texto, .texto-1, .texto-2 {
-      font-size: 10px;
-  
-    }
-    .texto-1::before {
-      display: none;
-    }
-  }
