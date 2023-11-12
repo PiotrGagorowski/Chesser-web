@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag "style_for_play_active.css" %>
+
+
+
+
+<div id="navbar" class="search-input d-flex flex-column justify-content-center mb-4">
+    <h1 class="h1-text">Pictures</h1>
+    <div class="justline"></div>
+</div>
+
+<div class="pictures-all d-flex justify-content-center">
+<%= image_tag ('pwr.jpg'), class: "pictures-all1", title: "text1" %>
+<%= image_tag ('pwr1.jpg'), class: "pictures-all1", title: "text2"  %>
+<%= image_tag ('pwr2.jpg'), class: "pictures-all1", title: "text3"  %>
+</div>
+
+
+
+
+<%= link_to 'Go back', root_path, class: 'btn btn-primary button-to-back', title: "Chesser-Web" %>
