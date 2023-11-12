@@ -283,8 +283,8 @@ input::placeholder {
 } */
 
 .pictures-all1 {
-    width: 40%;
-    height: 50%;
+    width: 35%;
+    height: 35%;
     margin: 2% 2%;
     border-radius: 10px 25px;
     border: 1px solid rgb(0, 187, 250);
@@ -303,7 +303,7 @@ input::placeholder {
 
 .arrow {
     position: fixed;
-    top: 50%;
+    top: 42%;
     font-size: 4em;
     color: white;
     background-color: rgba(0, 0, 0, 0.1);
