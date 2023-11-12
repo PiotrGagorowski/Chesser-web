@@ -2,6 +2,9 @@ body {
     height: 100%;
 }
 
+
+
+
 .search-input {
    
    
@@ -145,3 +148,159 @@ input::placeholder {
 .button-to-back:hover::after {
     left: 120%;
 }
+
+
+
+
+
+.first-name {
+    border-radius: 8px;
+     border: 1px solid rgb(0, 187, 250);
+     box-shadow: 0 0 5px white, 0 0 6px rgb(76, 196, 236), 0 0 10px rgb(17, 139, 180), 0 0 12px rgb(17, 139, 180);
+   
+   
+   }
+ 
+   
+ 
+   .textoo:hover {
+     color: #85bef8;
+   cursor: pointer;
+   text-shadow: 0 0 1px white, 0 0 2px rgb(76, 196, 236), 0 0 4px rgb(11, 96, 124), 0 0 6px rgb(3, 40, 52);
+   }
+ 
+   .textoo {
+     background: radial-gradient(circle at top left, #1d252d, #050b0f);
+     color: white;
+     transition: 0.5s;
+     padding: 40px;
+    font-size: 18px;
+  
+    
+   }
+ 
+   .texto-1 {
+     background: radial-gradient(circle at top left, #1d252d, #050b0f);
+     color: #3c98f4;
+     text-shadow: 0 0 1px white, 0 0 2px rgb(25, 191, 246), 0 0 4px rgb(0, 0, 0), 0 0 5px rgb(0, 1, 1);
+     transition: 2s;
+     padding: 40px;
+    font-size: 18px;
+  overflow: hidden;
+    position: relative;
+   }
+ 
+   .texto-1:hover {
+     box-shadow: 0 0 5px white, 0 0 6px rgb(76, 196, 236), 0 0 10px rgb(17, 139, 180), 0 0 12px rgb(17, 139, 180);
+     cursor: pointer;
+   }
+ 
+   .texto-1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-30deg);
+    transition: 0.8s;
+   
+} 
+
+.texto-1:hover::after {
+    left: 120%;
+}
+
+/* .texto-1:hover::before {
+    content: " / Black / Random";
+    position: absolute;
+    right: 90px;
+    top: 38%;
+
+    font-size: 18px;
+    color: white;
+    transition: 0.8s;
+    z-index: 2;
+} */
+
+.texto-1::before {
+    content: "/ Click to change color";
+    position: absolute;
+    right: 25%;
+    top: 38%;
+    font-size: 18px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.8s;
+    z-index: 2;
+}
+
+.texto-1:hover::before {
+    opacity: 1;
+}
+
+
+
+.texto-2 {
+    background: radial-gradient(circle at top left, #1d252d, #050b0f);
+    color: #3c98f4;
+    text-shadow: 0 0 1px white, 0 0 2px rgb(25, 191, 246), 0 0 4px rgb(0, 0, 0), 0 0 5px rgb(0, 1, 1);
+    transition: 2s;
+    padding: 40px;
+   font-size: 18px;
+ overflow: hidden;
+   position: relative;
+  }
+
+  .texto-2:hover {
+    box-shadow: 0 0 5px white, 0 0 6px rgb(76, 196, 236), 0 0 10px rgb(17, 139, 180), 0 0 12px rgb(17, 139, 180);
+    cursor: pointer;
+  }
+
+
+  .texto-2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-30deg);
+    transition: 0.8s;
+   
+} 
+
+.texto-2:hover::after {
+    left: 120%;
+}
+
+/* PICTURES */
+
+/* .pictures-all {
+ 
+} */
+
+.pictures-all1 {
+    width: 33%;
+    height: 50%;
+    margin: -1% 2%;
+    border-radius: 10px 25px;
+    border: 1px solid rgb(0, 187, 250);
+    box-shadow: 0 0 5px white, 0 0 10px rgb(76, 196, 236), 0 0 14px rgb(17, 139, 180);
+    animation: justli-1 5s alternate infinite linear;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+
+.pictures-all1:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+
+
+
+/* KONIEC PICTURES */

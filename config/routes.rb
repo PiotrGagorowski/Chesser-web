@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'active_users', to: 'users#active_users'
   get 'play', to: 'pages#play'
   get 'pages/instruction', to: 'pages#instruction'
+  get 'pages/pictures', to: 'pages#pictures'
 
   devise_for :users, controllers: { sessions: 'sessions', registrations: 'registrations' }
 

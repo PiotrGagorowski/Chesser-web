@@ -1,18 +1,21 @@
-<div class="container">
+<%= stylesheet_link_tag "style_for_play_active.css" %>
+
+
+<div class="container  d-felx justify-content-center">
   <%= form_with model: Game.new, url: games_path, method: :post do |form| %>
-    <div class="row form-group mb-5">
+    <div class="row form-group mb-5 texto  d-felx justify-content-center">
       <%= form.hidden_field :challenger_id, value: current_user.id %>
       <%= form.hidden_field :challengee_id, value: user.id %>
-      <div class="col-4 p-0">
-        <%= content_tag(:span, "#{user.email}", class:"input-group-text w-100") %>
+      <div class="col-4 p-0  d-felx justify-content-center" onclick="toggleOptions(this)">
+        <%= content_tag(:span, "#{user.email}", class:"input-group-text w-100 textoo first-name d-felx justify-content-center") %>
       </div>
-      <div class="col-4 p-0">
+      <div class="col-4 p-0 second-change first-name texto-1" style="display: none;">
         <%= form.select :color, 
           options_for_select([['White', 'white'], ['Black', 'black'], ['Random', 'random']],
-          ),{}, {class:"form-select w-100"} %>
+          ),{}, {class:"texto-1 form-select w-100"} %>
       </div>
-      <div class="col-4 p-0">
-        <%= form.submit "Challenge", class:"btn btn-primary w-100 jp" %>
+      <div class="col-4 p-0 third-play first-name texto-2" style="display: none;">
+        <%= form.submit "Challenge", class:"btn btn-primary w-100 jp texto-2" %>
       </div>
     </div>
   <% end %>
@@ -20,3 +23,19 @@
 
 
 
+<script>
+function toggleOptions(element) {
+  var siblings = element.parentNode.children;
+  for (var i = 0; i < siblings.length; i++) {
+    var sibling = siblings[i];
+    if (sibling !== element) {
+      if (sibling.style.display === 'none') {
+        sibling.style.display = 'block';
+      } else {
+        sibling.style.display = 'none';
+      }
+    }
+  }
+}
+
+</script>
