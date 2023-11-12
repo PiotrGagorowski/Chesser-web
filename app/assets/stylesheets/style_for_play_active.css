@@ -283,9 +283,9 @@ input::placeholder {
 } */
 
 .pictures-all1 {
-    width: 33%;
+    width: 40%;
     height: 50%;
-    margin: -1% 2%;
+    margin: 2% 2%;
     border-radius: 10px 25px;
     border: 1px solid rgb(0, 187, 250);
     box-shadow: 0 0 5px white, 0 0 10px rgb(76, 196, 236), 0 0 14px rgb(17, 139, 180);
@@ -301,6 +301,25 @@ input::placeholder {
 }
 
 
+.arrow {
+    position: fixed;
+    top: 50%;
+    font-size: 4em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  #arrow-left {
+    left: 10px;
+  }
+  
+  #arrow-right {
+    right: 10px;
+  }
+  
 
 
 /* KONIEC PICTURES */
