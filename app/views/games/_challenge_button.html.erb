@@ -7,15 +7,15 @@
       <%= form.hidden_field :challenger_id, value: current_user.id %>
       <%= form.hidden_field :challengee_id, value: user.id %>
       <div class="col-4 p-0" onclick="toggleOptions(this)">
-        <%= content_tag(:span, "#{user.email}", class:"input-group-text w-100 textoo") %>
+        <%= content_tag(:span, "#{user.email}", class:"input-group-text w-100 textoo first-name ") %>
       </div>
       <div class="col-4 p-0 second-change first-name texto-1" style="display: none;">
         <%= form.select :color, 
           options_for_select([['White', 'white'], ['Black', 'black'], ['Random', 'random']],
           ),{}, {class:"texto-1 form-select w-100"} %>
       </div>
-      <div class="col-4 p-0 third-play first-name " style="display: none;">
-        <%= form.submit "Challenge", class:"btn btn-primary w-100 jp" %>
+      <div class="col-4 p-0 third-play first-name texto-2" style="display: none;">
+        <%= form.submit "Challenge", class:"btn btn-primary w-100 jp texto-2" %>
       </div>
     </div>
   <% end %>
