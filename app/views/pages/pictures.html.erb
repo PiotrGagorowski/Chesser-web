@@ -3,18 +3,89 @@
 
 
 
-<div id="navbar" class="search-input d-flex flex-column justify-content-center mb-4">
+<div id="navbar" class="search-input d-flex flex-column justify-content-center mb-1">
     <h1 class="h1-text">Pictures</h1>
     <div class="justline"></div>
 </div>
 
-<div class="pictures-all d-flex justify-content-center">
-<%= image_tag ('pwr.jpg'), class: "pictures-all1", title: "text1" %>
-<%= image_tag ('pwr1.jpg'), class: "pictures-all1", title: "text2"  %>
-<%= image_tag ('pwr2.jpg'), class: "pictures-all1", title: "text3"  %>
+<div class="pictures-all d-flex justify-content-center flex-wrap">
+<div id="arrow-left" class="arrow"><--</div>
+<%= image_tag ('pwr.jpg'), class: "pictures-all1", title: "Rector Arkadiusz Wójs is playing with students" %>
+<%= image_tag ('pwr1.jpg'), class: "pictures-all1", title: "Student's battle"  %>
+<%= image_tag ('pwr2.jpg'), class: "pictures-all1", title: "Emotional game"  %>
+<%= image_tag ('pwr3.jpg'), class: "pictures-all1", title: "Student's fight" %>
+<%= image_tag ('hoche3.jpg'), class: "pictures-all1", title: "Logo Chesser-Web"  %>
+<%= image_tag ('pwr6.jpg'), class: "pictures-all1", title: "H-14 building - game spot" %>
+<div id="arrow-right" class="arrow">--></div>
 </div>
+
+
 
 
 
 
 <%= link_to 'Go back', root_path, class: 'btn btn-primary button-to-back', title: "Chesser-Web" %>
+
+
+<script>
+var images = document.querySelectorAll(".pictures-all1");
+var fullScreenImage = null;
+var currentIndex = 0;
+var arrowLeft = document.getElementById("arrow-left");
+var arrowRight = document.getElementById("arrow-right");
+
+
+arrowLeft.style.display = "none";
+arrowRight.style.display = "none";
+
+function showImage(index) {
+  if (fullScreenImage) {
+    document.body.removeChild(fullScreenImage);
+  }
+  fullScreenImage = document.createElement("div");
+  fullScreenImage.style.backgroundImage = `url(${images[index].src})`;
+  fullScreenImage.style.position = "fixed";
+  fullScreenImage.style.top = "0";
+  fullScreenImage.style.left = "0";
+  fullScreenImage.style.width = "100vw";
+  fullScreenImage.style.height = "100vh";
+  fullScreenImage.style.backgroundSize = "contain";
+  fullScreenImage.style.backgroundRepeat = "no-repeat";
+  fullScreenImage.style.backgroundPosition = "center";
+  fullScreenImage.style.backgroundColor = "rgba(0,0,0, 0.99)";
+  fullScreenImage.style.zIndex = "9999";
+  fullScreenImage.style.cursor = "zoom-out";
+  fullScreenImage.addEventListener("click", () => {
+    document.body.removeChild(fullScreenImage);
+    fullScreenImage = null;
+    arrowLeft.style.display = "none";
+    arrowRight.style.display = "none";
+  });
+  document.body.appendChild(fullScreenImage);
+}
+
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    currentIndex = index;
+    showImage(currentIndex);
+    arrowLeft.style.display = "block";
+    arrowRight.style.display = "block";
+  });
+});
+
+document.getElementById("arrow-left").addEventListener("click", () => {
+  if (fullScreenImage) {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  }
+});
+
+document.getElementById("arrow-right").addEventListener("click", () => {
+  if (fullScreenImage) {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  }
+});
+
+    
+</script>
