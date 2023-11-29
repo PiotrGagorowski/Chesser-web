@@ -8,6 +8,10 @@ class GamesController < ApplicationController
     @games = Game.all
   end
 
+  def show
+    @game = Game.find(params[:id])
+    # Reszta kodu
+  end
   # GET /games/1 or /games/1.json
   def show; end
 

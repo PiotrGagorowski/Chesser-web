@@ -10,5 +10,7 @@ class CreateGames < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+    add_foreign_key :games, :users, column: :white_player_id
+    add_foreign_key :games, :users, column: :black_player_id
   end
 end
