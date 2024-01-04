@@ -1,9 +1,23 @@
+<%= stylesheet_link_tag "style" %>
 <p style="color: green"><%= notice %></p>
 
 <h1>Games</h1>
 
 <div id="games">
   <% @games.each do |game| %>
+  
+      <p style="color: green">GAME ID: <%= game.id %></p>
+<p style="color: white">White player ID: <%= game.white_player_id %></p>
+<p style="color: white">Black player ID: <%= game.black_player_id %></p>
+<% if (current_user.id == game.white_player_id ) %>
+  <p style="color: red">Your ID is <%=current_user.id %> so you are playing this game as WHITE PLAYER !</p>
+<% end %>
+<% if (current_user.id == game.black_player_id ) %>
+  <p style="color: red">Your ID is <%=current_user.id %> so you are playing this game as BLACK PLAYER !</p>
+<% end %>
+<% if (current_user.id != game.black_player_id && current_user.id != game.white_player_id) %>
+  <p style="color: red">Your are not playing this game !</p>
+<% end %>
     <%= render game %>
     <p>
       <%= link_to "Show this game", game %>

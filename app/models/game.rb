@@ -1,12 +1,20 @@
 class Game < ApplicationRecord
   has_many :playables, dependent: :destroy
   has_many :users, through: :playables
+  belongs_to :black_player, class_name: 'User', foreign_key: 'black_player_id'
+  belongs_to :white_player, class_name: 'User', foreign_key: 'white_player_id'
 
   enum state: { in_progress: 0, checkmate: 1, draw: 2 }
   enum turns: { white: 0, black: 1 }
 
   before_create :set_fen
   before_create :set_pgn
+
+  def show
+    @game = Game.find(params[:id])
+    @game_id = @game.id
+    # Inne logika kontrolera
+  end
 
   def set_fen
     turn_abbreviation = if turn == 'white'

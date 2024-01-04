@@ -1,9 +1,10 @@
+<%= stylesheet_link_tag "style_for_play_active.css" %>
 <% @users.each do |user| %>
   <% games = current_user.game_in_progress_with(user) %>
   
   <% games.each do |game| %>
-    <%= link_to "Continue Game", game_path(game) %>
-    <p>You are playing with <%= user.email %> <%= games.count %> games</p>
+  <p style="color: green">Game ID: <%= game.id %>  ---> <span style="color: blue">your opponent: <span style="color: white"> <%= user.email %></span></span></p>
+    <%= link_to "Continue", game_path(game) %>
   <% end %>
   <%= render partial: "games/challenge_button", locals: { user: user }%>
 <% end %>
