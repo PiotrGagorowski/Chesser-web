@@ -8,12 +8,26 @@ class GamesController < ApplicationController
     @games = Game.all
   end
 
-  def show
+  def update
     @game = Game.find(params[:id])
-    # Reszta kodu
+    state = params[:state]
+  
+    case state
+    when 'checkmate'
+      winner = params[:winner]
+      # Przeprowadź logikę związana ze stanem szach mat
+    when 'draw'
+      # Przeprowadź logikę związana ze stanem remisu
+    else
+      # Przeprowadź logikę dla innych stanów
+    end
+  
+    # Wysyłamy odpowiedź AJAX
+    render json: { success: true, message: 'Game state updated successfully' }
   end
   # GET /games/1 or /games/1.json
-  def show; end
+  def show 
+  end
 
   # GET /games/new
   def new
