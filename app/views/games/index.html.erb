@@ -10,20 +10,21 @@
 <p style="color: white">White player ID: <%= game.white_player_id %></p>
 <p style="color: white">Black player ID: <%= game.black_player_id %></p>
 <% if (current_user.id == game.white_player_id ) %>
-  <p style="color: red">Your ID is <%=current_user.id %> so you are playing this game as WHITE PLAYER !</p>
+  <p style="color: red">Your ID - Player is <%=current_user.id %> so you are playing this game as WHITE PLAYER !</p>
 <% end %>
 <% if (current_user.id == game.black_player_id ) %>
-  <p style="color: red">Your ID is <%=current_user.id %> so you are playing this game as BLACK PLAYER !</p>
+  <p style="color: red">Your ID - Player is <%=current_user.id %> so you are playing this game as BLACK PLAYER !</p>
 <% end %>
 <% if (current_user.id != game.black_player_id && current_user.id != game.white_player_id) %>
-  <p style="color: red">Your are not playing this game !</p>
+  <p style="color: red">Your ID - Player is <%=current_user.id %> so you are not playing this game! Just watching</p>
 <% end %>
-    <%= render game %>
+  
     <p>
       <%= link_to "Show this game", game %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New game", new_game_path %>
+<%= link_to 'Go back', root_path, class: 'btn btn-primary button-to-back', title: "Chesser-Web" %>
+
 
