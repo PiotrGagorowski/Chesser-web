@@ -16,9 +16,11 @@
       <a class="nav-item nav-link active" href="play">Play</span></a>
       <a class="nav-item nav-link"<%= link_to "Active Players", active_users_path %> </a>
       <a class="nav-item nav-link"<%= link_to "Instruction", pages_instruction_path %> </a>
-      <a class="nav-item nav-link"<%= link_to "Pictures", pages_pictures_path %> </a>
-      <a class="nav-item nav-link active" href="activegames">Active Games</span></a>
-      <a class="nav-item nav-link active news-bar" href="#news">News</a>
+
+      <a class="nav-item nav-link"<%= link_to "All Games", games_path %> </a>
+
+      <a class="nav-item nav-link active" href="activegames">Your Games</span></a>
+     
       <a class="nav-item nav-link" <%= link_to "Logout", destroy_user_session_path, method: :delete %></a>
 
     </div>
@@ -47,21 +49,7 @@ and enhance your chess skills in our community.<br>
         <div class="dotss"></div>
 
         <div class="justline edi"></div>
-<div class=" d-flex flex-column align-items-center justify-content-center">
-    <div id="news">
-        News
-    </div>
 
-    <div class="justline"></div>
-    <div class="text-news ">
-    <h2 class="d-flex flex-column h2 align-items-center justify-content-center mb-4">News Update - November 9</h2>
-    <h4>We are excited to announce that the chess tournament will take place on December 15th at 18:00 in building C-4. We already have over 100 users in our database and we are looking forward to more registrations!
-    There will be prizes to be won! Stay tuned for more information as we will be updating you regularly.</h4>
-    </div>
-
-   
-
-</div>
 
 
 

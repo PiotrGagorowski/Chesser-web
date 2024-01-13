@@ -1,21 +1,22 @@
-
-<h2>Log in</h2>
+<div class="bflogin centered">
+<h2 class="loginn" title="Complete this form.">Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
+  <div class="form-inputs formmm centered wroeo1">
     <%= f.input :email,
                 required: false,
                 autofocus: true,
-                input_html: { autocomplete: "email" } %>
+                input_html: { autocomplete: "email", class: "centered wroeo" } %>
     <%= f.input :password,
                 required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                input_html: { autocomplete: "current-password", class: "centered wroeo" } %>
+   
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+  <div class="form-actions centered">
+    <%= f.button :submit, "Log in", class: "centered loginna" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

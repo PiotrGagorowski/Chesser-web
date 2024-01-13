@@ -383,3 +383,89 @@ h4 {
 /* KONIEC NEWS */
 
 
+/* LOGOWANIE */
+
+.bflogin {
+  width: 100% !important;
+  height: 100vh !important;
+  
+}
+
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ width: 600px;
+ line-height: 30px;
+ color: #0a58ca;
+ margin: 2px;
+ 
+}
+
+.loginn {
+ 
+  font-size: 60px;
+  color: #0a58ca;
+ 
+  cursor: pointer;
+  transition: 1s;
+ 
+}
+
+.loginn:hover {
+  color: white;
+  text-shadow: 0 0 2px rgb(0, 0, 0), 0 0 4px rgb(27, 197, 254), 0 0 8px rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.loginna {
+  font-size: 50px;
+  line-height: 50px;
+  overflow: hidden;
+  outline: hidden;
+  margin-top: 20px;
+  width: 50%;
+  transition: 1s;
+}
+
+.loginna:hover {
+  background-color: #0c1820;
+ letter-spacing: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* .wroeo {
+  box-shadow: 0 0 1px white, 0 0 10px rgb(76, 196, 236), 0 0 14px rgb(17, 139, 180);
+  background-color: #0e161e;
+} */
+
+
+
+.wroeo {
+  background-color: #0e161e;
+  color: white;
+}
+
+.wroeo:focus {
+  background-color: #0e161e;
+  color: white;
+  outline: none;
+}
+
+.wroeo:active {
+  background-color: #0e161e;
+  color: white;
+}
+
+.wroeo::input-placeholder {
+  color: white;
+}
+
+
+.wroeo1 {
+  font-size: 20px;
+  
+}
