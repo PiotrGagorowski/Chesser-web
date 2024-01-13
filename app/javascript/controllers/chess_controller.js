@@ -170,14 +170,48 @@ export default class extends Controller {
     this.removeGreySquares();
   }
 
-  gameState() {
+  gameOver() {
+    // get state target
     if (this.game.isCheckmate()) {
-      return "checkmate";
+      let winner = this.game.turn() === 'w' ? 'Black' : 'White';
+      this.stateTarget.innerHTML = 'Checkmate, ' + winner + ' wins';
+      alert('Checkmate! ' + winner + ' wins');
+  
+      // Ajax request to update game state on the server
+      $.ajax({
+        url: '<%= update_game_path(@game) %>',
+        method: 'PATCH',
+        data: { state: 'checkmate', winner: winner },
+        success: function(response) {
+          console.log('Game state updated successfully:', response);
+        },
+        error: function(error) {
+          console.error('Error updating game state:', error);
+        }
+      });
+  
+      return true;
     }
+  
     if (this.game.isDraw()) {
-      return "draw";
+      this.stateTarget.innerHTML = 'Draw';
+      alert('Draw');
+  
+      // Ajax request to update game state on the server
+      $.ajax({
+        url: '<%= update_game_path(@game) %>',
+        method: 'PATCH',
+        data: { state: 'draw' },
+        success: function(response) {
+          console.log('Game state updated successfully:', response);
+        },
+        error: function(error) {
+          console.error('Error updating game state:', error);
+        }
+      });
+  
+      return true;
     }
-    return "in_progress";
   }
 
   onSnapEnd() {
