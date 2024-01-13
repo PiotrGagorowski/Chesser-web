@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag "style_for_play_active.css" %>
+<%= stylesheet_link_tag "style" %>
+
+<div id="navbar" class="search-input d-flex flex-column justify-content-center mb-4">
+  <h1 class="h1-text">Your Active Games</h1>
+  <div class="justline"></div>
+</div>
+
+<% @users.each do |user| %>
+  <% games = current_user.game_in_progress_with(user) %>
+
+  <% games.each do |game| %>
+    <div class="game-container" style="border: 1px solid rgb(0, 187, 250); padding: 10px; text-align: center;">
+      <p style="color: #004080; font-size: 24px; font-weight: bold;">
+        <strong>Game ID:</strong> <%= game.id %>  ---> <span style="color: white; font-weight: bold;"><strong>your opponent:</strong> <%= user.email %></span>
+      </p>
+      <%= link_to "Continue", game_path(game), class: 'btn btn-primary darker-button', style: 'margin-top: 10px; display: inline-block;' %>
+      <%= button_to "Destroy this game", game, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger destroy-button', style: 'margin-top: 10px;' %>
+    </div>
+  <% end %>
+
+<% end %>
+
+<%= link_to 'Go back', root_path, class: 'btn btn-primary button-to-back', title: "Chesser-Web", style: 'display: block; margin: 20px auto; color: #004080; font-weight: bold;' %>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var destroyButtons = document.querySelectorAll('.destroy-button');
+
+    destroyButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        setTimeout(function() {
+          window.location.href = '<%= activegames_path %>';
+        }, 2000);
+      });
+    });
+  });
+</script>

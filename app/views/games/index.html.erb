@@ -1,30 +1,36 @@
+<%= stylesheet_link_tag "style_for_play_active.css" %>
 <%= stylesheet_link_tag "style" %>
-<p style="color: green"><%= notice %></p>
 
-<h1>Games</h1>
+<div id="navbar" class="search-input d-flex flex-column justify-content-center mb-4">
+  <h1 class="h1-text">All Games</h1>
+  <div class="justline"></div>
+</div>
+<p style="color: green; font-size: 18px; font-weight: bold;"><%= notice %></p>
+
 
 <div id="games">
   <% @games.each do |game| %>
-  
-      <p style="color: green">GAME ID: <%= game.id %></p>
-<p style="color: white">White player ID: <%= game.white_player_id %></p>
-<p style="color: white">Black player ID: <%= game.black_player_id %></p>
-<% if (current_user.id == game.white_player_id ) %>
-  <p style="color: red">Your ID - Player is <%=current_user.id %> so you are playing this game as WHITE PLAYER !</p>
-<% end %>
-<% if (current_user.id == game.black_player_id ) %>
-  <p style="color: red">Your ID - Player is <%=current_user.id %> so you are playing this game as BLACK PLAYER !</p>
-<% end %>
-<% if (current_user.id != game.black_player_id && current_user.id != game.white_player_id) %>
-  <p style="color: red">Your ID - Player is <%=current_user.id %> so you are not playing this game! Just watching</p>
-<% end %>
-  
-    <p>
-      <%= link_to "Show this game", game %>
-    </p>
+    <div class="game-container" style="border: 1px solid rgb(0, 187, 250); padding: 10px; text-align: left; margin-bottom: 20px;">
+      <p style="color: #004080; font-size: 18px; font-weight: bold;">Game ID: <%= game.id %></p>
+      <p style="color: white; font-size: 16px; font-weight: bold;">White player ID: <span style="color: #33CCFF; font-weight: bold;"><%= game.white_player_id %></span> email: <span style="color: #33CCFF; font-weight: bold;"><%= User.find_by(id: game.black_player_id).email %></span></p>
+      <p style="color: white; font-size: 16px; font-weight: bold;">Black player ID: <span style="color: #33CCFF; font-weight: bold;"><%= game.black_player_id %></span> email: <span style="color: #33CCFF; font-weight: bold;"><%= User.find_by(id: game.white_player_id).email %></span></p>
+
+      <% white_player = User.find_by(id: game.white_player_id) %>
+      <% black_player = User.find_by(id: game.black_player_id) %>
+
+      <% if (current_user.id == game.white_player_id) %>
+        <p style="color: red; font-size: 16px;">Your ID is <%= current_user.id %> so you are WHITE PLAYER! <span style="color: #33CCFF; font-weight: bold;"></span></p>
+      <% elsif (current_user.id == game.black_player_id) %>
+        <p style="color: red; font-size: 16px;">Your ID is <%= current_user.id %> so you are BLACK PLAYER! <span style="color: #33CCFF; font-weight: bold;"></span></p>
+      <% else %>
+        <p style="color: red; font-size: 16px;">This is not your game !</p>
+      <% end %>
+
+      <p>
+        <%= link_to "Show this game", game, class: 'btn btn-primary', style: 'margin-top: 10px;' %>
+      </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to 'Go back', root_path, class: 'btn btn-primary button-to-back', title: "Chesser-Web" %>
-
-
+<%= link_to 'Go back', root_path, class: 'btn btn-primary button-to-back', title: "Chesser-Web", style: 'display: block; margin: 20px auto; color: #004080; font-weight: bold;' %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_29_145800) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_29_175938) do
   create_table "games", force: :cascade do |t|
     t.string "state"
     t.string "turn"
@@ -39,6 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_29_145800) do
     t.datetime "updated_at", null: false
     t.datetime "last_seen"
     t.boolean "logged_in"
+    t.datetime "remember_created_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

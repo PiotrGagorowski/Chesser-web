@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   get 'play', to: 'pages#play'
   get 'pages/instruction', to: 'pages#instruction'
   get 'pages/pictures', to: 'pages#pictures'
-
+  get 'activegames', to: 'pages#activegames'
+  resources :games do
+    member do
+      patch 'update'
+    end
+  end
   devise_for :users, controllers: { sessions: 'sessions', registrations: 'registrations' }
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
